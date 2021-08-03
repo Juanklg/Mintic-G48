@@ -1,3 +1,4 @@
+#todo lo9 que as9ignamos de un input llega como string(str)
 ingresos = input("Digite los ingresos : ")
 gastos = input("Digite los gastos : ")
 resultado = "Nada"
