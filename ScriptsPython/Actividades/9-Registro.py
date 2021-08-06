@@ -7,13 +7,11 @@ rolAdmin = input("Ingrese rol Administrador True/False : ")
 try:    
     edad = int(edad)
     altura = float(altura)
-    #convirtiendo nuestro ingreso en la variable rolAdmin a Booleano
+    #convirtiendo nuestro ingreso en la variable rolAdmin a Booleano    
     if rolAdmin=="True" or rolAdmin=="False":
-        if rolAdmin == "True" : rolAdmin=True
-        elif rolAdmin == "False" : rolAdmin=False
-    else:
-        #como no se cumplio la condicionforzo el erro y lanza la except
-        exit()
+        rolAdmin = True if rolAdmin=="True" else False
+    else:exit()
+    #como no se cumplio la condicionforzo el erro y lanza la except
     
 #si no lanza ningun error continua el codigo normal
 #si lanza algun error retorna el bloque de codigo despues del except
@@ -30,6 +28,7 @@ print(f''' Registro Exitoso
     Administrador = {rolAdmin}
 ''')
 
+# en caso del rol ser True usamos despues el operador not para trasnformarlo a false
 if rolAdmin==True:
     print("El usuario no puede ser administrador entonces actualizamos su rol")
     rolAdmin = not rolAdmin

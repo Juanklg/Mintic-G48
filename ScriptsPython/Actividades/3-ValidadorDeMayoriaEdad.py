@@ -20,7 +20,7 @@ if type(edad)==int:
     #si la condicion es valida ejecuta lo qhay despues del if y del espacion de identacion
     if edad >= 18:
         print(f"{nombre} es mayor de edad, tiene {edad} años")
-    #si la condicion no se cumple ejecuta la sentencias q estas despues del else y con su respectivo espacio
+    #si la condicion no se cumple ejecuta la sentencias q estas despues del else y con su indentacion
     else:
         print(f"{nombre} es menor de edad, tiene {edad} años")
 else:

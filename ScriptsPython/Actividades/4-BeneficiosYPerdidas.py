@@ -1,7 +1,7 @@
-#todo lo9 que as9ignamos de un input llega como string(str)
+#todo lo que asignamos de un input llega como string(str)
 ingresos = input("Digite los ingresos : ")
 gastos = input("Digite los gastos : ")
-resultado = "Nada"
+resultado = None
 
 #intentar ejecutar una linea de codigo  y verificar que no arroje un error
 try:
@@ -13,6 +13,7 @@ except:
     print("vuelva a correr la aplicacion")
     exit()
 
+#iprimimos los valores ingresados
 print(f"Los ingresos son = {ingresos}")
 print(f"Los gastos son = {gastos}")
 
@@ -24,7 +25,7 @@ if ingresos > gastos:
 # si la condicon del if no es verdaera, valida la siguiente condicion, y si se cumple, ejecuta el bloque q hay dentro del elif de la condicion
 elif ingresos == gastos:
     resultado = "equilibrio"
-    valorResultado = gastos-ingresos
+    valorResultado = 0
 #si ninguna de las condiciones se cumple ejecuta lo que hay dentro del bloque de else
 else:
     resultado = "perdida"
