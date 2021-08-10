@@ -52,6 +52,7 @@ def dentroDelRango(v:int,vm=5,vM=35)->bool:
         print(f'El valor {v} está fuera de rango')
     return dentroRango
 
+
 ingresos = 5000
 gastos = 2000
 
