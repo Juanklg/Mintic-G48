@@ -11,7 +11,8 @@ print(f"El usuario ingreso en texto :{varInputBool}")
 
 # convirtiendo una entrada de texto a tipo bool
 if varInputBool=="True" or varInputBool=="False":
-    varInputBool = True if varInputBool=="True" else False
+    varInputBool = True if varInputBool=="True"
+else False
 
 print(f"La variable 'varInputBool' convertida a booleano = {varInputBool}")
 
@@ -22,11 +23,22 @@ print(f"La variable 'varInputBool' convertida a booleano = {varInputBool}")
 #3-not con el not invertimos el valor de una variable booleana
 print(f"la variable miBool = {miBool} la invierto asi, 'not miBool'")
 miBool = not miBool
-print(f"la variable miBool ahora = {miBool}")
+print(f"la variable miBool ahora = {miBool}")if miBool: validador()
+elif varInputBool: validador()
+else condicionesFalsas() 
 
-if miBool == True and varInputBool == True:
-    print(f"Las 2 variables son verdaderas")
-elif miBool == True or varInputBool == True:
-    print(f"Alguna de las 2 es verdadera")
-else:
+
+def condicionesFalsas():
     print(f"Ninguna de las dos variables es verdadera")
+
+def validador():    
+    if miBool == True and varInputBool == True:
+        print(f"Las 2 variables son verdaderas")
+    elif miBool == True or varInputBool == True:
+        print(f"Alguna de las 2 es verdadera")
+    else:
+        print(f"Ninguna de las dos variables es verdadera")
+
+if miBool: validador()
+elif varInputBool: validador2()
+else condicionesFalsas()

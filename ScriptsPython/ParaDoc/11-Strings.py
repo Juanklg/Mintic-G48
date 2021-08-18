@@ -12,10 +12,14 @@ ciudad = "Bogota"
 comentario = "\"Me gusta Python\""
 numero = 123456789
 
+# Imprimiendo Strings concatenados
 print("Juan es de "+ciudad+" y dice \n"+comentario+" y digito un numero"+str(numero))
 
+# Imprimiento un texto con unas variables internas
 print(f"Juan es de {ciudad} y dice \n{comentario} y digito un numero {numero}")
+# pritn con comas no necesita trasnformacion de tipos
 print("Juan es de",ciudad,"y dice\n",comentario)
+# print tambien acepta textos entre comilla simple
 print('Comentario con comilla simple',numero)
 
 #practivas grupo 61
