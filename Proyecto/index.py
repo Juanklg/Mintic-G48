@@ -1,0 +1,12 @@
+
+roles = {
+
+}
+
+funciones = {
+
+}
+
+objetos = {
+    
+}
