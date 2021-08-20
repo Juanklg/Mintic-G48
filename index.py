@@ -43,74 +43,93 @@ usuario = {
     "numMedallas":10,
 }
 
-employees = {
-    "employees":[
-        {"firstName":"John", "lastName":"Doe"},
-        {"firstName":"Anna", "lastName":"Smith"},
-        {"firstName":"Peter", "lastName":"Jones"}
-    ]
-}
-#actuaizando alguno de sus valores
-# print(usuario['curso'])
-usuario['curso']="Fundamentos de programacion"
-# print(usuario['curso'])
-# print(usuario['skills'])
+# diccionario = {
+#     'IDE':'Integrated Development Environment',
+#     'OOP':'Object Oriented Programming',
+#     'DBMS':'Database Management System'
+# }
 
-#funcion dir para ver metodos de una variable
-# detailVar(usuario)
-# print(dir(usuario))
+# #largo
+# print('Largo',len(diccionario))
+# # acceder a un elemento (key)
+# print( diccionario['IDE'])
+# print(diccionario.get('IDE'))
+# # modificando elementos
+# diccionario['IDE'] = 'integrated development environment'
+# print( diccionario['IDE'])
+# # recorrer los elementos
+# for termino, valor in diccionario.items():
+#     print(termino, valor)
 
-#clear
-# print(employees)
-employees.clear()
-print(employees)
+# for termino in diccionario.keys():
+#     print(termino)
 
-#copy
-# employees = usuario.copy()
-# print(employees)
+# for valor in diccionario.values():
+#     print(valor)
 
-#fromkeys
-# students = dict.fromkeys(['Xavi','Abraham','Juan','daniela'])
-students = dict.fromkeys(('Xavi','Abraham','Juan','daniela'))
-print(students)
+# # comprobar existencia de algún elemento
+# print('OOP' in diccionario)
 
-#get
-nv = usuario.get('curso')
-print(nv)
-nv = usuario['curso']
-print(nv)
+# # agregar un elemento
+# diccionario['PK'] = 'Primary Key'
+# print(diccionario)
 
-#items -> me retorna una lista de tuplas con las llaves y los valores
-nv = usuario.items()
-# print(nv)
+# # remover un elemento
+# diccionario.pop('DBMS')
+# print(diccionario)
 
-#keys
-nv = usuario.keys()
-# print(nv)
+# # limpiar
+# diccionario.clear()
+# print(diccionario)
 
-#pop -> elimina un elemnto del dicciopnario con su llave
-usuario.pop('numMedallas')
-# print(usuario)
+# # eliminar el diccionario
+# del diccionario
+# # print(diccionario)
 
-#popitem
-# usuario.popitem()
-
-#setdefault
-# usuario.setdefault()
-
-#update
-usuario.update(grupo='48')
-usuario.update(count=usuario['count']+1)
-# print(usuario)
-
-#values
-nv = usuario.values()
-# print(nv)
-
-#len
-print(len(usuario))
-print(usuario)
-
-del usuario['skills']
-
-print(usuario)
+# Definir una lista de tipo str
+nombres = ['Juan','Karla','Ricardo', 'María',15,5.9]
+# imprimir la lista nombres
+print(nombres)
+# acceder a los elementos de un a lista
+print(nombres[0])
+print(nombres[1])
+# acceder a los elementos de manera inversa
+print(nombres[-1])
+print(nombres[-2])
+#Imprimir un rago
+print(nombres[0:2]) # sin incluir el índice 2
+#Ir del inicio de la lista al índice (sin incluirlo)
+print(nombres[:3])
+#Desde el índice indicado hasta el final
+print(nombres[1:])
+#Cambiar un valor
+nombres[3] = 'Ivone'
+print(nombres)
+#iterar una lista
+for nombre in nombres:
+    print(nombre)
+else:
+    print('No existen más nombres en la lista')
+# preguntar el largo de una lista
+print(len(nombres))
+# agregar un elemento
+nombres.append('Lorenzo')
+print(nombres)
+# insertar un elemento en un índice en específico
+nombres.insert(1, 'Octavio')
+print(nombres)
+# remover un elemento
+nombres.remove('Octavio')
+print(nombres)
+# remover el último valor agregado
+nombres.pop()
+print(nombres)
+# eliminar un indice
+del nombres[0]
+print(nombres)
+# limpiar la lista
+nombres.clear()
+print(nombres)
+# borrar la lista por completo
+del nombres
+print(nombres)
