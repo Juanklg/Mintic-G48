@@ -1,21 +1,4 @@
-#primera impresion debe ser el saludo con el login
 
-# variables = {int,float,str,bool,range,list,dict,tuple}
-# funcines = {python,propias}
-# sentecias de control = {if,while,for}
-
-# Login
-login = True
-if login:
-    print("Usuario logueado")
-else:
-    print("Usuario sin registro")
-
-def detailVar(var:any):
-    print("El valor es :",var)
-    print("Es de tipo :",type(var))
-    print("Su longitud es :",len(var))
-# --------------------------------------------------------------------------------
 
 #dict
 miDict = {}
