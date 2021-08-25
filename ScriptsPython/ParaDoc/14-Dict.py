@@ -5,6 +5,7 @@ miDict = {}
 miDictFunct = dict(nombre='Juan',clase='Fundamentos de programacion')
 #crear un dict
 miDict = {
+    ('IDE',78694):'Integrated Development Environment',
     'IDE':'Integrated Development Environment',
     'OPP':'Object Oriented Programming',
     'DBMS':'Database Management System',
