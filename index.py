@@ -1,108 +1,205 @@
-#primera impresion debe ser el saludo con el login
+import crudXls as crud
+import funciones as fn
+from datetime import datetime
 
-# variables = {int,float,str,bool,range,list,dict,tuple}
-# funcines = {python,propias}
-# sentecias de control = {if,while,for}
-
-def isLogin(user)->bool:
-    login = None
-    if user=="Login":
-        login = True
-        print("Usuario logueado")
-    else:
-        login = False
-        print("Usuario no logueado, stop")
-        exit()
-
-def detailVar(var:any):
-    print("El valor es :",var)
-    print("Es de tipo :",type(var))
-    print("Su longitud es :",len(var))
-
-def detailArch(el):
-    print('---------------------------------')
-    print(el)
-    print("len = ",len(el))
-    for i,e in zip(range(len(el)),el):
-        print(f"Pos : {i} - Elemento : {e}")
-
-user = "Login"
-# user = "login"
-isLogin(user)
-# --------------------------------------------------------------------------------
+fn.isLogin("Login")
 print("Corriendo la app")
+# --------------------------------------------------------------------------------
 
-#varios tipos de elementos en conjunto
-s = {True,56.7,None,"Grupo 48",("variables","acciones","frases")}
+rut =r"C:\Users\MakeDream\Desktop\Ruta1\Mintic-G48\dbTask.xlsx"
 
-#los set no aceptan elementos repetidos
-s1 = set([1,5,9,7,3,6,7,1,5])
-s2 = set(range(10))
-s3 = set(["Thomas","Xavi","Abraham","Juan","Thomas"])
-s4 = set('Hola Pythonista')
+def menuFinal(rut):
+    #lista de parametros para creacion
+    task = ("Nombre","Descripcion","Estado","Inicio","Fin")
+    #Lista de opciones para el menu de el cli
+    opciones = ("Create","Read","Update","Delete","Exit")
+    #Filtros para buscar en la base de datos
+    filterState = ["Todas","Pendientes","Ejecucion","Revision","Finalizada"]
+    #Sub meno de opciones de estado de las tareas q se agregan
+    menuState = filterState[1:]
 
-detailArch(s)
-detailArch(s1)
-detailArch(s2)
-detailArch(s3)
-detailArch(s4)
+    while True:
+        opcion=''
+        print('---------------------------------')
+        fn.printMenu(opciones)
+        opcion=input('Digite la opcion deseada: ')
+        print("\nUsted selecciono la opcion",opcion)
+        if not(opcion=="1") and not(opcion=="2") and not(opcion=="3") and not(opcion=="4") and not(opcion=="5"):
+            print("Comando Invalido")
+        elif opcion=="1":#Create
+            dictTask=dict.fromkeys(task)        
+            print('\n* Crear nueva Tarea *')
 
-# print(dir(s3))
+            print('\n* Nombre *') 
+            dictTask['Nombre']=input('Indique el Nombre de la tarea : ')
 
-#Hacemos una copia
-s5 = s3.copy()
-print('copy',s5)
-#Comparacion con iguales
-#compara uno a uno los elementos del conjunto
-print("son iguales",(s3==s5))
+            print('\n* Descripcion *') 
+            dictTask['Descripcion']= input('Indique la descripcion de la tarea : ')
 
-# add elemento
-s3.add('Formador')
-print('add',s3)
-# Print
-print("s3",s3)
-print("s5",s5)
-# difference
-#retorna la diferencia q tiene el elemento inicial con el q sepa como argumento
-print('difference s3(s5)',s3.difference(s5))
-print("s3-s5",s3-s5)
-#en este caso todos los elementos del s5 se encuentarn en el s3
-print('difference s5(s3)',s5.difference(s3))
-print("s5-s3",s5-s3)
+            dictTask['Estado']='Pendientes'
+            now = datetime.now()
+            dictTask['Inicio']=str(now.day) +'/'+ str(now.month) +'/'+str(now.year)
+            dictTask['Finalizada']=''
+            crud.Create(rut, dictTask)
+        elif opcion=="2":#Read
+            fn.printMenu(filterState)
+            opcion=input('\nIndique la lista de tareas que quiere revisar: ')
+            print("\nUsted selecciono la opcion",opcion)
+            if not(opcion=="1") and not(opcion=="2") and not(opcion=="3") and not(opcion=="4"):
+                print("Comando Invalido")
+            elif opcion=="1":
+                print('* Consultando Todas Las tareas*') 
+                crud.Read(rut, 'Todas')
+            elif opcion=="2":
+                print('* Consultando las tareas Pendientes*')
+                crud.Read(rut, 'Pendientes')
+            elif opcion=="3":
+                print('* Consultando las tareas Ejecucion*')
+                crud.Read(rut, 'Ejecucion')
+            elif opcion=="4":
+                print('* Consultando las tareas Revision*')
+                crud.Read(rut, 'Revision')
+            elif opcion=="5":
+                print('* Consultando las tareas Finalizada*')
+                crud.Read(rut, 'Finalizada')
+        elif opcion=="3":#update
+            dictTask=dict.fromkeys(task)
+            print('\n* Actualizar Tarea *')
+            id=int(input('Indique el Id de la tarea que desea actualizar: '))
 
-#difference_update ->
-print('difference_update',s3.difference_update(s5))
-print("Nuevo s3",s3)
-#discard elimina si existe o si no continua normal
-print('discard',s3.discard('Xavi'))
-#remove elmina pero retorna error si el elemnto no existe
-# print('remove',s3.remove('Xavi'))
-# intersection
-print('intersection',s3.intersection(s5))
-print('intersection',s5.intersection(s3))
-# isdisjoint
-print('isdisjoint no comparten elementos?',s3.isdisjoint(s5))
-# Print
-print("s1",s1)
-print("s2",s2)
-print('intersection',(s1 & s2))
-# isdisjoint
-print('isdisjoint no comparten elementos?',s1.isdisjoint(s2))
-# intersection_update
-print('intersection_update compa',s1.intersection_update(s2))
-print("New s1",s1)
-# issubset
-print('issubset s1 in s2',s1.issubset(s2))
-print('issubset s2 in s1',s2.issubset(s1))
-# issuperset
-print('issuperset s1 in s2',s1.issuperset(s2))
-print('issuperset s2 in s1',s2.issuperset(s1))
+            print('\n* Nuevo titulo *')
+            print('*Nota: si no desea actualizar el titulo solo oprima ENTER')
+            dictTask['Nombre']=input('Indique el nuevo titulo de la tarea : ')
+            
+            print('\n* Nuevo Descripcion *')
+            print('*Nota: si no desea actualizar el titulo solo oprima ENTER')
+            dictTask['Descripcion']=input('Indique la descripcion de la tarea : ')
 
+            print('\n* Nuevo Estado *')
+            fn.printMenu(menuState)
+            print('*Nota: si no desea actualizar el titulo solo oprima ENTER')        
+            newState = int(input('Indique el nuevo estado de la  tarea : '))
+            dictTask['Estado'] = filterState[newState]
+            if newState == 4:
+                now = datetime.now()
+                dictTask['Fin'] = str(now.day) +'/'+ str(now.month) +'/'+str(now.year)
+            crud.Update(rut,id,dictTask)
+        elif opcion=="4":#delete        
+            print('* ELiminar Tarea **') 
+            id=int(input('Indique el Id de la tarea que desea eliminar: '))
+            crud.Delete(rut, id)
+        elif opcion=="5":exit()
 
-print('symmetric_difference s3 y s5',s5.symmetric_difference(s3))
-print('symmetric_difference_update s3 con s5',s3.symmetric_difference_update(s5))
-print("nuevo s3",s3)
-print('union',)
-print('update',)
-print('pop',)
-print('clear',)
+def menuOriginal(rut):
+    datosActualizados = {
+        'titulo':'',
+        'descripcion':'',
+        'estado':'',
+        'fechaInicio':'',
+        'fechaFinalizacion':'',
+    }
+
+    while True:
+        print('Indique la accion que desea realizar: ')
+        print('\t 1-Consultar')
+        print('\t 2-Actualizar')
+        print('\t 3-Crear nueva tarea')
+        print('\t 4-Borrar')
+        accion = input('Escriba la opccion: ')
+
+        if not(accion=="1") and not(accion=="2") and not(accion=="3") and not(accion=="4"):
+            print('Comando invalido por favor eliga una opcion valida')
+        elif accion=='1': 
+            opc_consulta='' 
+            print('Indique las tareas que desea consultar: ') 
+            print('\t 1-Todas las tareas') 
+            print('\t 2-En espera') 
+            print('\t 3-En ejecucion') 
+            print('\t 4-Por aprobar') 
+            print('\t 5-Finalizada') 
+            opc_consulta = input('Digite las tareas que desea consultar: ')
+            print("Consulta",opc_consulta)
+            if opc_consulta=='1': 
+                print() 
+                print() 
+                print('* Consultando todas Las tareas *') 
+                crud.leer(rut, 'todo') 
+            elif opc_consulta=='2': 
+                print() 
+                print() 
+                print('* Consultando tareas en espera *') 
+                crud.leer(rut, 'En espera') 
+            elif opc_consulta=='3': 
+                print() 
+                print() 
+                print('* Consultando tareas en ejecucion *') 
+                crud.leer(rut, 'En ejecucion') 
+            elif opc_consulta=='4': 
+                print() 
+                print() 
+                print('* Consultando tareas por aprobar *') 
+                crud.leer(rut, 'Por aprobar') 
+            elif opc_consulta=='5': 
+                print() 
+                print() 
+                print('* Consultando tareas finalizadas *') 
+                crud.leer(rut, 'Finalizada')
+        elif accion=='2': 
+            datosActualizados={'titulo':'', 'descripcion':'', 'estado':'', 'fecha inicio':'', 'fecha finalizacion':''}
+            print('* Actualizar Tarea *') 
+            print() 
+            id_Actualizar=int(input('Indique el Id de la tarea que desea actualizar: ')) 
+            print() 
+            print('* Nuevo titulo *') 
+            print('*Nota: si no desea actualizar el titulo solo oprima ENTER') 
+            datosActualizados['titulo']=input('Indique el nuevo titulo de la tarea : ') 
+            print() 
+            print('* Nueva descripcion *') 
+            print('Nota: si no desea actualizar la descripcion solo oprima ENTER') 
+            datosActualizados[ 'descripcion']= input('Indique La nueva descripcion de la tarea : ') 
+            print() 
+            print('* Nueva estado **') 
+            print('En espera: 2') 
+            print('En ejecucion: 3') 
+            print('Por aprobar 4') 
+            print('Finalizada: 5')
+            print('**Nota: si no desea actualizar el estado solo oprima ENTER') 
+            estadoNuevo= input('Indique el nuevo estado de la tarea : ') 
+            if estadoNuevo=='2': 
+                datosActualizados['estado']='En espera' 
+            elif estadoNuevo=='3': 
+                datosActualizados[ 'estado']='En ejecucion' 
+            elif estadoNuevo=='4': 
+                datosActualizados[ 'estado']='Por aprobar' 
+            elif estadoNuevo=='5': 
+                now = datetime.now() 
+                datosActualizados['estado']='Finalizada' 
+                datosActualizados['fecha finalizacion']=str(now.day) +'/'+ str(now.month) +'/'+str(now.year) 
+                
+            now = datetime.now() 
+            datosActualizados['fecha inicio']=str(now.day) +'/'+ str(now.month) +'/'+str(now.year) 
+            crud.actualizar(rut,id_Actualizar, datosActualizados) 
+            print()
+        elif accion=='3': 
+            datosActualizados={'tarea':'', 'descripcion':", 'estado':'", 'fecha inicio':'', 'fecha finalizacion':''} 
+            print('* Crear nueva Tarea *') 
+            print() 
+            print('* titulo *') 
+            print() 
+            datosActualizados['titulo']=input('Indique el titulo de la tarea : ')
+            print() 
+            print('* descripcion *') 
+            datosActualizados['descripcion']= input('Indique la descripcion de la tarea : ')
+            print() 
+            datosActualizados['estado']='En espera' 
+            now = datetime.now() 
+            datosActualizados['fecha inicio']=str(now.day) +'/'+ str(now.month) +'/'+str(now.year) 
+            datosActualizados['fecha finalizacion']=''
+            crud.agregar(rut, datosActualizados) 
+        elif accion=='4': 
+            print('') 
+            print('* ELiminar Tarea **') 
+            iden=int(input('Indique el Id de la tarea que desea eliminar: '))
+            crud.borrar(rut, iden)
+
+menuFinal(rut)
