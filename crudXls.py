@@ -1,6 +1,12 @@
-import funciones
 from datetime import datetime
 from openpyxl import load_workbook
+
+# wb.template = True
+# wb.save('document_template.xltx')
+
+def consultarTablas(ruta:str):
+    Archivo_Excel = load_workbook(ruta)
+    return Archivo_Excel.sheetnames
 
 def Create(ruta:str, datos:dict):
     Archivo_Excel = load_workbook(ruta)
@@ -27,12 +33,10 @@ def Read(ruta:str, filtro:str):
     task = [(2,"Nombre"),(3,"Descripcion"),(4,"Estado"),(5,"Inicio"),(6,"Fin")]
     print(ruta,filtro)
     Archivo_Excel = load_workbook(ruta)
-    # print("Hojas dentro del archivo",Archivo_Excel.sheetnames)
-    # wb.template = True
-    # wb.save('document_template.xltx')
     Hoja_datos = Archivo_Excel['Datos del crud']
     # print("Hoja_datos.max_row",Hoja_datos.max_row)
-    Hoja_datos=Hoja_datos['A2':'F'+str(Hoja_datos.max_row)]
+    # Hoja_datos=Hoja_datos['A2':'F'+str(Hoja_datos.max_row)]
+    Hoja_datos=Hoja_datos['A2':'F100']
     info={}
     print("info ---------------- ", info)
     for i in Hoja_datos:
