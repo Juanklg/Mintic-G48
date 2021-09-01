@@ -22,7 +22,9 @@ print("Juan es de",ciudad,"y dice\n",comentario)
 # print tambien acepta textos entre comilla simple
 print('Comentario con comilla simple',numero)
 
-#practivas grupo 61
+tercio = 1.0/3
+print("Un tercio = %f"%tercio)
+print("Un tercio = %.2f" %tercio)
 
 var = "Juan dice : \n\"Me gusta python\""
 #asi se hacen comentarios de multimples lineas
@@ -72,3 +74,7 @@ print(f''' Registro Exitoso
     Altura = {altura} metros
     Administrador = {rolAdmin}
 ''')
+
+var = 31
+    hexa = 0x31
+    print("El en hexa = %d y el numero en decimal es = %d" % (hexa,var))

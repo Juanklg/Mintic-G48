@@ -230,6 +230,23 @@ def menuOriginal(rut):
             iden=int(input('Indique el Id de la tarea que desea eliminar: '))
             crud.borrar(rut, iden)
 
+def returnUser(username):
+    usuario = {
+        'nombre':username,
+        'edad':31,
+        'admin':True,
+        'count':15,
+        "curso":"Curso de python",
+        'correo':'juanlinares.ruta1@utp.edu.co',        
+        "skills":{
+            "Programacion":True,
+            "BaseDeDatos":False
+        },
+        "numMedallas":10,
+    }
+    return usuario
+
+
 rut = r"C:\Users\MakeDream\Desktop\Ruta1\Mintic-G48\dbTask.xlsx"
 print("Imprimiendo variable dunder name en funciones = ",__name__)
 if __name__ == '__main__':

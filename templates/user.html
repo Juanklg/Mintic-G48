@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+
+<Head></Head>
+
+<body>
+    <title>Hello from Flask</title>
+    {% if user.nombre %}
+    <h1>Hello {{ user.nombre }}!</h1>
+    {% else %}
+    <h1>Hello, usuario desconocido!</h1>
+    {% endif %}
+
+</body>
+
+</html>
