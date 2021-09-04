@@ -1,26 +1,46 @@
-from flask import Flask, render_template
 import funciones as fn
-# from numpy import random as r
-import numpy as np
-
-app = Flask(__name__)
-
+from flask import Flask, render_template,request
 fn.isLogin("Login")
-var = "Corriendo la app"
+var = "Iniciando".center(50,'-')
+app = Flask(__name__)
 # --------------------------------------------------------------------------------
-@app.route("/usuarios/<name>")
-def hello_world(name=None):    
-    user = fn.returnUser(name)
-    return render_template("user.html",user=user)
-
 @app.route("/")
-def proyecto():
-    return render_template("index.html")
+def Eindex():
+    return render_template("index.html",title='wordSelector')# formulario de inicio
 
-# rut = r"C:\Users\MakeDream\Desktop\Ruta1\Mintic-G48\dbTask.xlsx"
-# Tablas = crud.consultarTablas(rut)
-# fn.detailVar(Tablas)
+@app.route("/login")
+def Elogin(username=None):
+    user=request.args['username']
+    return render_template("user.html",title='wordSelector',user=user)# formulario de inicio
 
-print("Imprimiendo variable dunder name en funciones = ",__name__)
+@app.route("/registro")
+def Eregistro():
+    return render_template("registro.html")#formulario de registro
+
+@app.route("/admin")
+def Eadmin():
+    return render_template("admin.html")#formulario de edicion o activacion
+
+@app.route("/usuarios/<name>")
+def Euser(name=None):
+    print(f'---------capturado user {name}')
+    # listas = fn.listas_d
+    return render_template("user.html",user=name)
+
+# @app.route("/proyecto/<p>")
+# def proy(p=None):
+#     proyecto=fn.getProyectoByUser(p)    
+#     return render_template("proyecto.html",proyecto=proyecto,w=600)
+
+# --------------------------------------------------------------------------------
+# Vistas documentacion
+@app.route("/doc")
+def Edoc():
+    return render_template(f"doc/doc.html",title='Documentacion')
+@app.route("/doc/<doc>")
+def Edocu(doc=None):
+    return render_template(f"doc/{doc}.html")
+
+print("Imprimiendo variable dunder name en main = ",__name__)
 if __name__ == '__main__':
     app.run(debug=True)
