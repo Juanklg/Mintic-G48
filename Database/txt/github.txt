@@ -1,0 +1,8 @@
+paso1 - crear Repositorio
+paso2 - settings, manage Acces, Invite a collaborator, juanklg
+paso3 - Invitar o copar link de invitacion
+paso4 - voy al terminal y creo mi branch de dev con el siguiiente comando
+paso5 - git branch dev
+paso6 - branche dev es la rama de desarrollo
+
+
