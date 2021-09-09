@@ -1,8 +1,25 @@
-paso1 - crear Repositorio
-paso2 - settings, manage Acces, Invite a collaborator, juanklg
-paso3 - Invitar o copar link de invitacion
-paso4 - voy al terminal y creo mi branch de dev con el siguiiente comando
-paso5 - git branch dev
-paso6 - branche dev es la rama de desarrollo
+crear Repositorio
+settings, manage Acces, Invite a collaborator, juanklg
+Invitar
+voy al terminal en mi repositorio clonado
+creo mi branch de dev con el siguiiente comando:
+git branch dev
+branche dev es la rama de desarrollo donde se trabaja
+
+creo una nueva rama para colaborar como guia:
+git branch guia
+veo la lista de branch(ramas) local:
+git branch
+me cambio de rama de forma local:
+git checkout guia
+agrego mis cambios
+hago mi comit desde guia
+hago push para subir los cambios a la nube
+en la agina github creo un (pull request) para agregar los cambios a la rama principal:
+Agregando graficas de la clase 8 de la seccion  1.4
+Cada uno se encarga de entrar a la cuenta y aceptar los cambios q se proponen
+
+
+
 
 
