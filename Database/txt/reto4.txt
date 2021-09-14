@@ -1,13 +1,13 @@
 generar un funcion que leaa un archivo csv q ya esta en la carpeta del grupo en la carpeta de los csv
 entergar los siguientes resultados en un dict c/u
 -Promedio de edades de los infectados por departamentos 
-    -> dict {F,M}= procentaje redondeado 4 decinames  ej {F: 55.5, M: 44.5}
+    Ejemplo: {Antioquía: 23.4554, Risaralda: 35.33, Amazonas: 31.4432}    
 -Promedio de porcentaje de infectados masculinos y femeninos
-    Ejemplo: {Antioquía: 23.4554, Risaralda: 35.33, Amazonas: 31.4432}
+    -> dict {F,M}= procentaje redondeado 4 decimales  ej {F: 55.5, M: 44.5}
 -Porcentaje de la procedencia de los infectados
     Ejemplo {España: 20.32, Ecuador: 53.33, Francia: 26.35}
 
-se debe retornanr una lista con los 3 disccionarios
+se debe retornar una lista con los 3 diccionarios
 esqueleto de la funcion
 
 def casos(ruta_archivo: str)-> dict:
