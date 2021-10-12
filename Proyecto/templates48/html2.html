@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="keywords" content="HTML,CSS,PYTHON" />
+    <meta name="description" content="Pagina para explorar componentes de Html5" />
+    <meta name="author" content="https://github.com/juanklg" />
+    <title>Html 5</title>
+    <!-- <link rel="icon" type="image/x-icon" href="">: -->
+    <!-- <link rel="stylesheet" href=""> -->
+    <style>
+        .imagenes {
+            width: 80%;
+        }
+        .parrafos{
+            width: 80%;
+            height: 200px;
+            overflow-x: scroll;
+        }
+    </style>
+</head>
+
+<body>
+    <div>        
+        <h1 title="Titulo">Explorando HTML parte 2</h1>
+        <h2>Formularios</h2>
+        <form action="/formulario">
+            <h3>Radio</h3>
+            <input type="radio" name="sexo" value="fasculino">
+            <label>Masculino</label><br>
+            <input type="radio" name="sexo" value="femenino">
+            <label>Femenino</label><br>
+            <h3>Checkbox</h3>
+            <input type="checkbox" name="vehicle1" value="Bike">
+            <label> I have a bike</label><br>
+            <input type="checkbox" name="vehicle2" value="Car">
+            <label> I have a car</label><br>
+            <input type="checkbox" name="vehicle3" value="Boat">
+            <label> I have a boat</label><br>
+            <h3>Text</h3>
+            <!-- <input type="text" accesskey="t" tabindex="2" onfocus="console.log('ustes esta en el campo de texto')" onchange="console.log('cambiando')"> -->
+            <input type="text" name="nombre">   
+            <h3>Textarea</h3>            
+            <!-- <input type="search"> -->
+            <!-- <input type="url"> -->
+            <button type="submit">Enviar</button>
+            <button type="reset">Reset</button>
+        </form>
+        <br>
+        <br>        
+        <button title="Boton" type="button" onclick="alert('Hola button')">Alert</button>
+        <button type="button" onclick="prompt('Please enter your name', 'Harry Potter')">Prompt</button>
+        
+        
+        
+        <h2><i>Textos y palabras</i></h2>
+        <p class="parrafos">
+            Este proyecto consiste en una aplicación <q>dirigida principalmente a jóvenes</q>, pero cualquier
+            persona podrá hacer uso de ella, en la cual los usuarios podrán interactuar de forma
+            anónima con otros usuarios con la intención de recibir un <strong>apoyo emocional,</strong> una opinión, un
+            consejo etc.<br>Esta app también contará con personas especializadas en esta área como
+            <u>psicólogos</u>, pero deberá de haber una forma de pago si se quiere hacer uso de este
+            servicio. En la aplicación los usuarios contarán con una mascota y también se encontrará
+            <b>espacios de relajación y de entretenimiento para garantizar la mejor comodidad y calidad al
+            usuario.</b>
+            Escrito el <time>16/09/2021</time>
+            <a href="https://www.youtube.com/">ir a la pagina de videoa</a>
+        </p>
+        
+        <img src="static/img/space.jpg" alt="Espacio" class="imagenes">
+        
+        <ol>
+            <li>Imagen 1</li>
+            <li>Imagen 2</li>
+        </ol>
+        <ul>
+            <li>Imagen 1</li>
+            <li>Imagen 2</li>
+        </ul>
+    </div>
+</body>
+
+</html>

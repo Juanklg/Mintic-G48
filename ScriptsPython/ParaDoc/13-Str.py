@@ -14,7 +14,7 @@ texto = "Hola python desde fundamentos de programacion"
 listaDePalabras = splitText(texto,' ')
 
 # detailVar(listaDePalabras)
-detailVar(texto)
+# detailVar(texto)
 
 #acediendo a una posicion especifica
 # nv = listaDePalabras[3]
