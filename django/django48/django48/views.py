@@ -1,56 +1,55 @@
 from django.http import HttpResponse
-from django.template import Template, Context
+from django.template import loader
 import datetime
+
+def saludar(request):
+    fechaActual = datetime.datetime.now()
+    plt = loader.get_template('saludo.html')
+    docu = plt.render({'fecha':fechaActual})
+    return HttpResponse(docu)
+    
+def fonts(request):
+    plt = loader.get_template('learncss/fonts.html')
+    docu = plt.render()
+    return HttpResponse(docu)
+
+def tareas(request):
+    taskList = ['Implementar db sqlite3','integrar vistas de flask']
+    plt = loader.get_template('learndjango/tareas.html')
+    docu = plt.render({"listado":taskList})
+    return HttpResponse(docu)
 
 def calculo(request,fechaNacimiento,fechaFutura):
     aActual = datetime.datetime.now().year
-    # edadActual = aActual - fechaNacimiento
-    # edadFutura = fechaFutura - fechaNacimiento
-    documento = '''
-        <!DOCTYPE html>
-        <html lang="en">
-
-        <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Calculo</title>
-        </head>
-
-        <body>
-            <h1>Nacio en el año %s y tiene %s años</h1>
-            <h1>En el %s este personaje tendra %s</h1>
-        </body>
-
-        </html>
-    ''' % (fechaNacimiento,aActual-fechaNacimiento,fechaFutura,fechaFutura-fechaNacimiento)
-    return HttpResponse(documento)
-
-def fecha(request):
-    fechaActual = datetime.datetime.now()
-    documento = '''
-        <!DOCTYPE html>
-        <html lang="en">
-
-        <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        </head>
-
-        <body>
-            <h1>El momento de la peticion fue %s</h1>
-        </body>
-
-        </html>
-    ''' % fechaActual
-    return HttpResponse(documento)
-
-def saludar(request):
-    doc_externo = open(r'C:\Users\MakeDream\Desktop\Ruta1\Mintic-G48\django\django48\django48\templates\layout.html')
-    plt = Template(doc_externo.read())
-    doc_externo.close()
-    ctx = Context()
-    docu = plt.render(ctx)
+    edadActual = aActual - fechaNacimiento
+    edadFutura = fechaFutura - fechaNacimiento
+    dataCalculo={
+        "agnoActual":aActual,
+        "agnoNacimiento":fechaNacimiento,
+        "agnoFUturo":fechaFutura,
+        "edad":edadActual,
+        "edadFutura":edadFutura,
+    }
+    plt = loader.get_template('learndjango/calculos.html')
+    docu = plt.render(dataCalculo)
     return HttpResponse(docu)
+
+# from django.template import Template, Context,loader
+
+# doc_externo = open(r'C:\Users\MakeDream\Desktop\Ruta1\Mintic-G48\django\django48\django48\templates\layout.html')
+# plt = Template(doc_externo.read())
+# doc_externo.close()
+# ctx = Context({
+
+# doc_externo = open(r'C:\Users\MakeDream\Desktop\Ruta1\Mintic-G48\django\django48\django48\templates\layout.html')
+# plt = Template(doc_externo.read())
+# doc_externo.close()
+# ctx = Context()
+# docu = plt.render(ctx)
+# return HttpResponse(docu)
+
+# doc_externo = open(r'C:\Users\MakeDream\Desktop\Ruta1\Mintic-G48\django\django48\django48\templates\tareas.html')
+# plt = Template(doc_externo.read())
+# doc_externo.close()
+# ctx = Context({"listado":taskList})
+# docu = plt.render(ctx)

@@ -1,0 +1,39 @@
+.tableV{
+    height: 200px;
+    border: 1;
+}
+td.top{vertical-align: top;}
+td.mid{vertical-align: middle;}
+td.bot{vertical-align: bottom;}
+
+[class^='boxs']{
+    padding: 5px;
+    margin: 10px;
+    font-size: 2em;    
+    /* width: 40%; */
+    /* height: 80px; */
+    text-align: center;
+}
+
+.divAlVer{
+    height: 400px;
+    width: 600px;
+    /* background-color: red; */
+    display: inline-table;
+}
+[class^='alVer']{    
+    padding: 20px;
+    display: table-cell;
+    vertical-align: middle;
+    border: 5px solid;
+}
+
+.alVer1 span{
+    /* vertical-align: sub; */
+}
+.alVer2 span{
+    /* vertical-align: super; */
+}
+.alVer3 span{
+    /* vertical-align: -30px; */
+}

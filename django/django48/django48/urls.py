@@ -16,13 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 # from django.django48.django48.views import calculo
-from django48.views import saludar,fecha,calculo
+from django48.views import saludar,calculo,tareas,fonts
 # import django48.views as dj
 # from django48.views import *
 
 urlpatterns = [
+    path('',saludar),
+    path('fonts/',fonts),
+    path('tareas/',tareas),
+    path('calculo/<int:fechaNacimiento>/<int:fechaFutura>',calculo),
     path('admin/', admin.site.urls),
-    path('saludar/',saludar),
-    path('peticion/',fecha),
-    path('calculo/<int:fechaNacimiento>/<int:fechaFutura>',calculo)
 ]

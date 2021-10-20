@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="https://github.com/Juanklg" />
+    <link href="static/css/global.css" rel="stylesheet">
+    <meta name="keywords" content="html, css, python, javascript" />
+    <meta name="description" content="Exploramos el contenido basico de html y css" />
+    <link rel="icon" type="image/x-icon" href="" />
+    {% block meta %}
+        
+    {% endblock meta %}
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body>
+    <div class="container m-auto">        
+        <header id="header">
+            <h1>{{diccionario.title}}</h1>
+        </header>
+        <aside>
+            <div class="asides">
+                <table>
+                    <thead>
+                        <th>Contenido</th>
+                    </thead>
+                    <tbody>
+                        <td>Tablas</td>
+                    </tbody>
+                    <tfoot>
+                        <td>Lista de Contenidos</td>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="punteado-center-asidess" name='verde'>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus distinctio laborum adipisci!
+                    Ipsum, quasi laboriosam? Aliquid eligendi, quam voluptate accusamus ipsum id nemo alias
+                    laudantium, illo maiores minima, expedita molestiae!</p>
+            </div>
+            <div class="hijos">
+                <div>
+                    <h2>Titulo</h2>
+                    <h3>Titulo hermano</h3>
+                    <h3>Hermano 3</h3>
+                    <h3>Hermano 4</h3>
+                </div>
+                <div>
+                    <h3>d2</h3>
+                </div>
+                <div>
+                    <h3>d3</h3>
+                </div>
+                <div>
+                    <h3>d4</h3>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <div class="content">
+                {% block content %}
+
+                {% endblock%}
+            </div>
+        </main>
+
+        <footer id="footer">
+            <p>Author: Hege Refsnes<br>
+                <a href="mailto:hege@example.com">hege@example.com</a>
+            </p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

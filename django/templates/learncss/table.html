@@ -1,0 +1,63 @@
+{% extends "layouts/layout.html" %}
+
+{% block head %}
+<title>Tablas css y html</title>
+<link rel="stylesheet" href="/static/css/table.css">
+<link href='https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css' rel='stylesheet' />
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src='https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js'></script>
+{% endblock %}
+
+{% block content %}
+<table id="myTable" class="display" width="100%"></table>
+
+<div class="table">
+    <table class="tableV" border="1" cellpadding='2' cellspacing='0'>
+        <tr>
+            <td class="top">Texto arriba</td>
+            <td class="mid">Texto medio</td>
+            <td class="bot">Texto abajo</td>
+        </tr>
+    </table>
+</div>
+
+<div class="divAlVer">
+    <p class="alVer1">Lorem ipsum dolor sit amet <span> consectetur adipisicing </span>elit. Et est sunt reiciendis</p>
+    <hr>
+    <p class="alVer2">Lorem ipsum dolor sit amet <span> consectetur adipisicing </span>elit. Et est sunt reiciendis</p>
+    <hr>
+    <p class="alVer3">Lorem ipsum dolor sit amet <span> consectetur adipisicing </span>elit. Et est sunt reiciendis</p>
+</div>
+
+<script>
+    var dataSet = []
+    $(document).ready(function () {
+        $.ajax(
+            {
+                url: "/login",
+                method: 'post',
+                data: {
+                    zipcode: 97201
+                },
+                success: function (result) {                    
+                    $('#myTable').DataTable({
+                    data: result,
+                    columns: [
+                    { title: "Name" },
+                    { title: "Position" },
+                    { title: "Office" },
+                    { title: "Extn." },
+                    { title: "Start date" },
+                    { title: "Salary" }
+            ]
+        });
+                    // $("#weather-temp").html("<strong>" + result + "</strong> degrees");
+                }
+            }
+        );
+    });
+</script>
+
+
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "layout/layout.html" %}
+
+{% block head %}
+    <title>***Fecha***</title>
+{% endblock %}
+
+{% block main %}
+    <h1>Mi lista de tareas</h1>
+    <ol>
+        {% for tarea in listado %}
+        <li>{{tarea|upper}}</li>
+        {% endfor %}
+    </ol>
+{% endblock %}

@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'Monoton';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(/static/fonts/monoton.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+h2{ 
+    text-align: center;     
+    font-family: 'Monoton', cursive;
+    font-size: 3em;
+}
+[class^='boxs']{
+    padding: 5px;
+    margin: 10px;
+    font-size: 2em;    
+    /* width: 40%; */
+    /* height: 80px; */
+    text-align: center;
+}
+
+.font_times{font-family: 'Times New Roman', Times, serif;}
+.font_georgia{font-family: Georgia, 'Times New Roman', Times, serif;}
+.font_arial{font-family: Arial, Helvetica, sans-serif;}
+.font_verdana{font-family: Verdana, Geneva, Tahoma, sans-serif;}
+.font_arial{font-family: Arial, Helvetica, sans-serif;}
+.font_courier{font-family: 'Courier New', Courier, monospace;}
+.font_lucida{font-family: 'Lucida Handwriting', cursive;}
+.font_sans_pro{font-family: 'Source Sans Pro', sans-serif;;}
+.font_google1{font-family: 'Monoton', cursive;}
+
+.boxs1{
+    background-color:SteelBlue;
+    color: LightCyan;
+    font-variant: small-caps;
+}
+.boxs2{
+    background-color:DodgerBlue;
+    color: LightCyan;
+    text-transform: uppercase;
+}
+.boxs3{
+    background-color:Aquamarine;
+    color: hsl(0, 0%, 50%);
+    text-transform: lowercase;
+}
+.boxs4{
+    text-decoration: underline;
+}
+.boxs5{
+    text-decoration: overline;    
+}
+.boxs6{
+    text-decoration: line-through;
+}
+.boxs7{
+    text-transform: lowercase;
+    text-transform: uppercase;    
+}
+
+.boxp1{    
+    line-height: 1;
+    font-weight: normal;
+    font-style: italic;
+    text-align: left;
+}
+.boxp2{    
+    line-height: 1.7;    
+    font-weight: bolder;
+    text-align: right;
+    font-style: normal;
+}
+.boxp3{
+    border-radius: 10px;
+    padding: 2em;
+    border: 5px solid MidnightBlue;
+    line-height: 1;
+    font-weight: lighter;
+    text-align: justify;
+    font-style: oblique;
+    font-size: 1.5em;
+    text-decoration: overline;
+}
+
+/* Aqua	#00FFFF	rgb(0, 255, 255) */
+/* Cyan	#00FFFF	rgb(0, 255, 255) */
+/* LightCyan	#E0FFFF	rgb(224, 255, 255) */
+/* PaleTurquoise	#AFEEEE	rgb(175, 238, 238) */
+/* Aquamarine	#7FFFD4	rgb(127, 255, 212) */
+/* Turquoise	#40E0D0	rgb(64, 224, 208) */
+/* MediumTurquoise	#48D1CC	rgb(72, 209, 204) */
+/* DarkTurquoise	#00CED1	rgb(0, 206, 209) */
+/* CadetBlue	#5F9EA0	rgb(95, 158, 160) */
+/* SteelBlue	#4682B4	rgb(70, 130, 180) */
+/* LightSteelBlue	#B0C4DE	rgb(176, 196, 222) */
+/* PowderBlue	#B0E0E6	rgb(176, 224, 230) */
+/* LightBlue	#ADD8E6	rgb(173, 216, 230) */
+/* SkyBlue	#87CEEB	rgb(135, 206, 235) */
+/* LightSkyBlue	#87CEFA	rgb(135, 206, 250) */
+/* DeepSkyBlue	#00BFFF	rgb(0, 191, 255) */
+/* DodgerBlue	#1E90FF	rgb(30, 144, 255) */
+/* CornflowerBlue	#6495ED	rgb(100, 149, 237) */
+/* MediumSlateBlue	#7B68EE	rgb(123, 104, 238) */
+/* RoyalBlue	#4169E1	rgb(65, 105, 225) */
+/* Blue	#0000FF	rgb(0, 0, 255) */
+/* MediumBlue	#0000CD	rgb(0, 0, 205) */
+/* DarkBlue	#00008B	rgb(0, 0, 139) */
+/* Navy	#000080	rgb(0, 0, 128) */
+/* MidnightBlue	#191970	rgb(25, 25, 112) */
+

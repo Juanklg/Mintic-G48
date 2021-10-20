@@ -1,0 +1,7 @@
+Primer proyecto django
+- pip install django
+- django-admin startproject xxxxxxx
+- (Entrar a la carpeta) python manage.py runserver
+
+Crear una app dentro del proyecto de django
+- python manage.py startapp gestor

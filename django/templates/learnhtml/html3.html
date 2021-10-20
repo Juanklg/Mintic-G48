@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="html, css, python, javascript" />
+    <meta name="description" content="Exploramos el contenido basico de html y css" />
+    <meta name="author" content="https://github.com/Juanklg" />
+    <link rel="icon" type="image/x-icon" href="" />
+    <!-- <link href="static/css/tailwind.min.css" rel="stylesheet"> -->
+    <link href="static/css/global.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> -->
+    <title>Explorando Html</title>
+</head>
+
+<body>
+    <div class="container m-auto">
+        <header id="header">
+            <h1>{{diccionario.title}}</h1>
+        </header>
+        <aside>
+            <div class="asides">
+                <table>
+                    <thead>
+                        <th>Contenido</th>
+                    </thead>
+                    <tbody>
+                        <td>Tablas</td>
+                    </tbody>
+                    <tfoot>
+                        <td>Lista de Contenidos</td>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="punteado-center-asidess" name='verde'>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus distinctio laborum adipisci!
+                    Ipsum, quasi laboriosam? Aliquid eligendi, quam voluptate accusamus ipsum id nemo alias
+                    laudantium, illo maiores minima, expedita molestiae!</p>
+            </div>
+            <div class="hijos">
+                <div>
+                    <h2>Titulo</h2>
+                    <h3>Titulo hermano</h3>
+                    <h3>Hermano 3</h3>
+                    <h3>Hermano 4</h3>
+                </div>
+                <div>
+                    <h3>d2</h3>
+                </div>
+                <div>
+                    <h3>d3</h3>
+                </div>
+                <div>
+                    <h3>d4</h3>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <div class="content">
+
+                <h2>Tablas</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio consectetur nesciunt veniam,
+                    laboriosam
+                    perferendis unde amet aperiam minima inventore cupiditate sapiente officiis rerum neque alias, nisi
+                    quae
+                    similique? Amet, molestiae.</p>
+                <a href="#">link a otra pagina</a>
+                <div>
+                    <table>
+                        <colgroup>
+                            <col style="background-color: blueviolet;">
+                            <col style="background-color: rgb(43, 226, 180);">
+                            <col style="background-color: rgb(144, 130, 156);">
+                            <col style="background-color: rgb(63, 68, 46);">
+                            <col style="background-color: rgb(22, 102, 29);">
+                            <col style="background-color: rgb(198, 185, 211);">
+                            <col style="background-color: rgb(43, 61, 226);">
+                            <col style="background-color: rgb(43, 226, 141);">
+                        </colgroup>
+                        <caption>Css</caption>
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Bordes</th>
+                                <th>Colores</th>
+                                <th>Box</th>
+                                <th>Display</th>
+                                <th>Posicion</th>
+                                <th>Slectores</th>
+                                <th>Flex</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Description</td>
+                                <td>P1</td>
+                                <td>P2</td>
+                                <td>P3</td>
+                                <td>P4</td>
+                                <td>P5</td>
+                                <td>P6</td>
+                                <td>P7</td>
+                            </tr>
+                            <tr>
+                                <td>Tailwind</td>
+                                <td>P1</td>
+                                <td>P2</td>
+                                <td>P3</td>
+                                <td>P4</td>
+                                <td>P5</td>
+                                <td>P6</td>
+                                <td>P7</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <p>Estamos viendo la <a href="#">herencia</a>en Css</p>
+                    <p class="parrafo">Estamos viendo la <a href="#">cascada</a>en Css</p>
+                    <p id="parrafo">Estamos viendo la <a href="#">cascada</a>en Css</p>
+                    <p class="parrafo-2">El parrafo que queremos cambiar y no podemos</p>
+                </div>
+                <div class="divsticky">Elemento de tipo div sticky</div>
+                <div>
+                    <h2>Box Model</h2>
+                    <div class="box1">Caja1</div>
+                    <div class="box2">Caja2</div>
+                </div>
+                <div>
+                    <h2>Position relative</h2>
+                    <div class="relativo-1">relative 1</div>
+                    <div class="relativo-2">relative 2</div>
+                    <h2>Position Absoluto</h2>
+                    <div class="box-2">
+                        <div class="subox-1"></div>
+                        <div class="subox-2"></div>
+                        <div class="subox-3"></div>
+                        <div class="subox-4"></div>
+                        <div class="subox-5"></div>
+                    </div>
+                    <div class="box-3">Position fixed</div>
+                    <div class="floatCont">
+                        <h1>Propiedad Float en CSS</h1>
+                        <section>
+                            <button>toggle image size</button>
+                            <div class="user">
+                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/652/ada-small.jpeg">
+                                <h3>Ada Lovelace</h3>
+                                <a href="#">Account</a>
+                                <a href="#">Change Password</a>
+                                <a href="#">Log Out</a>
+                            </div>
+                        </section>
+
+
+
+
+                        <div class="contenedor flotado contenedor1">
+                            Cupidatat proident aliqua enim eu velit esse incididunt ad dolor ipsum. Labore anim
+                            consequat in aliquip irure labore tempor nisi amet sit do. Adipisicing enim incididunt nisi
+                            ullamco. Reprehenderit aute et officia ullamco nisi nisi. Aute commodo adipisicing eu amet
+                            culpa est labore consectetur cillum deserunt ad ipsum cupidatat. Velit duis excepteur
+                            exercitation excepteur. Culpa cillum non dolore cupidatat reprehenderit laboris et ad
+                            reprehenderit.
+                            Consectetur irure eiusmod veniam mollit irure consequat. Nisi sunt incididunt veniam ex
+                            incididunt ex officia amet laborum sit est culpa consectetur nostrud. Veniam cillum
+                            consectetur excepteur duis ex cillum ea sunt amet Lorem exercitation non nulla. Qui eiusmod
+                            minim consectetur sint sunt tempor eiusmod exercitation ea mollit. Ad in tempor ea amet ad
+                            est do.
+                        </div>
+                        <div class="contenedor flotado contenedor2">
+                            Cupidatat proident aliqua enim eu velit esse incididunt ad dolor ipsum. Labore anim
+                            consequat in aliquip irure labore tempor nisi amet sit do. Adipisicing enim incididunt nisi
+                            ullamco. Reprehenderit aute et officia ullamco nisi nisi. Aute commodo adipisicing eu amet
+                            culpa est labore consectetur cillum deserunt ad ipsum cupidatat. Velit duis excepteur
+                            exercitation excepteur. Culpa cillum non dolore cupidatat reprehenderit laboris et ad
+                            reprehenderit.
+                            Consectetur irure eiusmod veniam mollit irure consequat. Nisi sunt incididunt veniam ex
+                            incididunt ex officia amet laborum sit est culpa consectetur nostrud. Veniam cillum
+                            consectetur excepteur duis ex cillum ea sunt amet Lorem exercitation non nulla. Qui eiusmod
+                            minim consectetur sint sunt tempor eiusmod exercitation ea mollit. Ad in tempor ea amet ad
+                            est do.
+                        </div>
+                        <div class="contenedor flotado contenedor3">
+                            Cupidatat proident aliqua enim eu velit esse incididunt ad dolor ipsum. Labore anim
+                            consequat in aliquip irure labore tempor nisi amet sit do. Adipisicing enim incididunt nisi
+                            ullamco. Reprehenderit aute et officia ullamco nisi nisi. Aute commodo adipisicing eu amet
+                            culpa est labore consectetur cillum deserunt ad ipsum cupidatat. Velit duis excepteur
+                            exercitation excepteur. Culpa cillum non dolore cupidatat reprehenderit laboris et ad
+                            reprehenderit.
+                            Consectetur irure eiusmod veniam mollit irure consequat. Nisi sunt incididunt veniam ex
+                            incididunt ex officia amet laborum sit est culpa consectetur nostrud. Veniam cillum
+                            consectetur excepteur duis ex cillum ea sunt amet Lorem exercitation non nulla. Qui eiusmod
+                            minim consectetur sint sunt tempor eiusmod exercitation ea mollit. Ad in tempor ea amet ad
+                            est do.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <footer id="footer">
+            <p>Author: Hege Refsnes<br>
+                <a href="mailto:hege@example.com">hege@example.com</a>
+            </p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

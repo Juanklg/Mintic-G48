@@ -1,0 +1,13 @@
+/* Container for flexboxes */
+* {box-sizing: border-box;}
+section {display: -webkit-flex;display: flex;}
+section nav{-webkit-flex: 1;-ms-flex: 1;flex: 1;}
+nav a{
+    display: block;    
+}
+section .container{ -webkit-flex: 5;-ms-flex: 5;flex: 5;}
+
+@media (max-width: 900px) {
+    section {-webkit-flex-direction: column; flex-direction: column;}
+    nav a{display: inline-block;}
+}

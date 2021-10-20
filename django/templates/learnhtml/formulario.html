@@ -1,0 +1,56 @@
+{% extends "layouts/layout.html" %}
+
+{% block meta %}
+<link href="static/css/formularios.css" rel="stylesheet">
+{% endblock meta %}
+
+{% block content %}
+
+<h2>Formularios</h2>
+<form action="/" method="post">
+    <h3>Input texto</h3>
+    <label for="nombre">Nombre</label>
+    <input class="textos" type="text" placeholder="Escriba algo" name="nombre" accesskey="n">
+
+    <label for="texto">Texto</label>
+    <textarea onchange="console.log('Cambio el texto')" class="textos" name="texto" cols="30" rows="10"></textarea>
+
+    <label>Correo:
+        <input type="email" name="email" required>
+    </label>
+
+    <h3>Input numerico</h3>
+    <label for="tel">Telefono:</label>
+    <input type="number" name="tel" onfocus="console.log('Ingreso al campo de telefono')" id="tel">
+
+    <h3>Input Contraseña</h3>
+    <label>Contraseña:
+        <input type="password" name="pass" onblur="console.log('Salio de el campo de pswd')">
+    </label>
+
+    <h3>Radio Button</h3>
+    <input type="radio" name="grupo" value="29" id="g29">
+    <label for="g29">Grupo 29</label>
+    <br>
+    <input type="radio" name="grupo" value="48" id="g48">
+    <label for="g48">Grupo 48</label>
+    <br>
+    <input type="radio" name="grupo" value="61" id='g61'>
+    <label for="g61">Grupo 61</label>
+    <br>
+
+    <h3>CheckBox</h3>
+    <input type="checkbox" name="python" tabindex="3" id="python">
+    <label for="python">Python</label>
+    <input type="checkbox" name="html" tabindex="1" id="html">
+    <label for="html">Html</label>
+    <input type="checkbox" name="css" tabindex="2" id="css">
+    <label for="css">Css</label>
+
+    <h3>Botones</h3>
+    <button type="submit">Enviar</button>
+    <button type="reset">Reset</button>
+    <button type="button" onclick="alert('Usted hizo click en el boton')">Alert</button>
+</form>
+
+{% endblock%}

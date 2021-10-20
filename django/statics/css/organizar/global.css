@@ -1,0 +1,266 @@
+header{
+    height: 10%;
+    width: 100%;
+    background-color: blueviolet;
+    display: inline-block;
+    /* position: fixed; */
+    /* margin: auto; */
+    top: 0;
+}
+
+aside{
+    background-color: #7fff00;
+    font-size: smaller;
+    max-width: 250px;
+    /* position: fixed;     */
+    float: left;
+    /* display: inline-block; */
+}
+
+main{
+    background-color: crimson;
+    float: left;
+    /* max-width: 600px; */
+    width: 70%;
+    
+    /* color: cornsilk; */
+    /* display: inline-block; */
+}
+
+footer{
+    clear: both;
+    text-align: center;
+    height: 10%;
+    padding: 50px;
+    background-color: darkgoldenrod;
+}
+
+/* Selector por atributos con un vaor espesifico */
+[name='verde']{
+    color: green;
+}
+/* Selector q almenos contenga ese elemento una vez */
+[class~='asides']{
+    border: 1px solid #000;
+}
+/* q sea exacto el valor del atr iniciando o antes de un guion */
+[class|='punteado']{
+    border: 1px dashed blue;
+}
+/* cuando inicie con ese atr */
+[class^='punteado']{
+    background-color: pink; 
+}
+/* cuando termina con el valor en el atr */
+[class$='asidess']{
+    border-radius: 7px;
+}
+/* Cuando contiene el valor en el atr */
+[class*='center']{
+    text-align: center;
+}
+
+/* le da estilo al elmento hermano siguiente*/
+h2 + h3{
+    color: saddlebrown;
+}
+
+/* le da estilo a todos los elementos del tipo que sean hermanos */
+h2 ~ h3{
+    font-size: xx-large;
+}
+
+/* le da style a los hijos de ese elemento */
+.hijos div{
+    background-color: salmon;    
+}
+
+[class*='center'] > p{
+    /* font-family: 'Times New Roman', Times, serif; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main > p{
+    color: yellow;
+}
+
+
+
+#parrafo{
+    color: blueviolet;
+}
+.parrafo{
+    color: orange;
+}
+a{
+    color: inherit;
+}
+/* p{
+    color: green !important;
+} */
+
+.parrafo-2{
+    color: purple;
+}
+
+
+main > table, th, td, caption {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    /* border-style: solid;
+    border-radius: 5px;
+    border: 5px; */
+}
+
+.box1{
+    width: 100px;
+    height: 100px;
+    background-color: lime;
+    margin: auto;
+    padding: 50px;
+    margin-top: 50px;    
+    margin-bottom: 20px;
+    border: 5px double blue;    
+}
+.box2{
+    width: 100px;
+    height: 100px;
+    background-color: lightcoral;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border-top: 5px double blue;    
+    border-bottom: 5px dotted red;
+    border-left: 8px dashed yellow;    
+}
+
+[class^='relativo']{
+    background-color: lightslategrey;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.relativo-1{
+    position: relative;
+    top: 50px;
+    right: 50px; 
+    z-index: 2;
+}
+.relativo-2{
+    position: relative;
+    z-index: 2;
+}
+
+/* Absolute */
+.box-2{   
+    background-color: aqua; 
+    height: 300px;
+    width: 300px;    
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+[class^='subox']{    
+    width: 45px;
+    height: 45px;
+    margin: auto;
+    border: 5px solid black;
+}
+
+.subox-1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+}
+.subox-2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+}
+
+.subox-3{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 10px;
+}
+.subox-4{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+}
+
+.box-3{   
+    position: fixed;
+    background-color: rgb(0, 68, 255); 
+    height: 100px;
+    width: 100px;        
+    padding: 10px;    
+    bottom: 0;
+    right: 0;
+}
+
+.divsticky{
+    position: sticky;
+    position: -webkit-sticky;
+    top: 10px;    
+    border: 3px solid firebrick;
+    background-color: rgb(3, 226, 226,0.5);
+}
+
+/* Prop0iedad del float y clear */
+
+section {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.user {
+    width: 400px;
+    height: 165px;
+    margin: 2em 0;
+    border: 3px solid #E18728;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.user img {
+    padding: .5em;
+    float: left;
+}
+.user a{
+    display: block;
+}
+
+
+div.contenedor{    
+    width: 30%;
+    height: 100px;
+    overflow: auto;
+}
+div.contenedor.flotado{
+    /* float: left; */
+}
+div.contenedor.flotado.contenedor1{
+    border: 3px dashed greenyellow;
+}
+div.contenedor.flotado.contenedor2{
+    border: 3px dashed cornflowerblue;
+    /* float: right; */
+}
+div.contenedor.contenedor3{
+    /* clear: both; */
+    border: 3px dashed darkorange;
+    margin: auto;
+}
+
+
