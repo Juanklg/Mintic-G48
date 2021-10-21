@@ -4,7 +4,7 @@ import datetime
 
 def saludar(request):
     fechaActual = datetime.datetime.now()
-    plt = loader.get_template('saludo.html')
+    plt = loader.get_template('index.html')
     docu = plt.render({'fecha':fechaActual})
     return HttpResponse(docu)
     
