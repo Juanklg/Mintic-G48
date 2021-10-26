@@ -5,3 +5,10 @@ Primer proyecto django
 
 Crear una app dentro del proyecto de django
 - python manage.py startapp gestor
+
+Creacion de migraciones django
+- python manage.py makemigrations
+- python manage.py sqlmigrate __appname __codmigration
+- python manage.py migrate
+
+from gestor.models import *
