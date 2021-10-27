@@ -12,3 +12,23 @@ Creacion de migraciones django
 - python manage.py migrate
 
 from gestor.models import *
+
+var1=Articulos.objects.create(nombre='silla', seccion='hogar', precio=200)
+var1=Articulos.objects.create(nombre='Zapatos', seccion='caballero', precio=500)
+var1=Articulos.objects.create(nombre='balon', seccion='deporte', precio=160)
+var1=Articulos.objects.create(nombre='falda', seccion='damas', precio=800)
+var1=Articulos.objects.create(nombre='taladro', seccion='ferreteria', precio=1600)
+var1=Articulos.objects.create(nombre='raqueta', seccion='deporte', precio=230)
+var1=Articulos.objects.create(nombre='destornillador', seccion='ferreteria', precio=230)
+var1=Articulos.objects.create(nombre='mesa', seccion='hogar', precio=380)
+var1=Articulos.objects.create(nombre='silla', seccion='gamer', precio=470)
+
+art4 = Articulos.objects.filter(seccion='ferreteria') | Articulos.objects.filter(seccion='hogar')
+art3 = Articulos.objects.filter(precio__gte=160)
+
+print(art3)
+
+precio__gte mayor o igual
+precio__lte menor o igual
+precio__gt solo igual
+name__icontains

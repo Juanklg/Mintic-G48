@@ -1,6 +1,25 @@
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from django.template import loader
+from django.shortcuts import render
+
+from gestor.models import Articulos
+
 import datetime
+
+def articulos(request):
+    print(request.GET)
+    articulos = Articulos.objects.filter()
+    diccionario = {'articulos':articulos.values()}
+    return render(request,'articulos/articulos.html',diccionario)
+
+def addarticulo(request):    
+    art = Articulos.objects.create(nombre=request.GET['nombre'],seccion=request.GET['seccion'],precio=request.GET['precio'])
+    return HttpResponseRedirect('/articulos')
+
+def searcharticulo(request):
+    nombre = request.GET['snombre']
+    articulos = Articulos.objects.get(nombre=nombre)
+    return HttpResponseRedirect('/articulos',articulos)
 
 def saludar(request):
     fechaActual = datetime.datetime.now()

@@ -1,0 +1,13 @@
+https://docs.djangoproject.com/en/3.2/ref/models/fields/#unique
+
+https://docs.djangoproject.com/en/3.2/ref/models/querysets/#field-lookups
+
+http://127.0.0.1:8000/articulos/
+
+https://www.w3schools.com/html/html_layout.asp
+
+
+Activar ambiente virtual
+. proydjango/Scripts/activate
+
+python django48/manage.py runserver

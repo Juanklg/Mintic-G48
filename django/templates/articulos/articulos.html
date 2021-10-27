@@ -1,0 +1,42 @@
+{% extends "layout/layout.html" %}
+
+{% block head %}
+<title>***Articulos***</title>
+{% endblock %}
+
+{% block main %}
+<section class="addArticulo">
+	<h2>Formularios par articulos</h2>
+	<form action="/addarticulo" method="get">
+		<label>Ingrese el nombre del articulo:
+			<input type="text" name="nombre"></label><br>
+		<label>Ingrese la seccion del articulo:
+			<input type="text" name="seccion"></label><br>
+		<label>Ingrese el precio del articulo:
+			<input type="number" name="precio"></label><br>
+
+		<input type="submit" value="Add">
+	</form>
+</section>
+
+{% if articulos %}
+<section class="searchArticulo">
+	<form action="/searcharticulo">
+		<input type="text" name="snombre">
+		<input type="submit" value="Buscar">
+		<!-- <label>Seccion:<input type="text" name="sseccion"></label>
+		<label>Precio:<input type="number" name="sprecio"></label> -->
+	</form>
+</section>
+<section class="readArticulo">
+	{% for art in articulos %}
+	<div class="articulo">
+		<div class="nombre">{{art.nombre}}</div>
+		<div class="seccion">{{art.seccion}}</div>
+		<div class="precio">{{art.precio}}</div>
+	</div>
+</section>
+{%endfor%}
+{%endif%}
+
+{% endblock %}
