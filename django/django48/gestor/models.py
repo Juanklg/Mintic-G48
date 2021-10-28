@@ -28,4 +28,3 @@ class Tareas(models.Model):
     descripcion=models.CharField(max_length=100)
     estado=models.IntegerField(default=0)
     responsable=models.CharField(max_length=30)
-

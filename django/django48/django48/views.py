@@ -6,20 +6,28 @@ from gestor.models import Articulos
 
 import datetime
 
-def articulos(request):
-    print(request.GET)
-    articulos = Articulos.objects.filter()
-    diccionario = {'articulos':articulos.values()}
+def articulos(request):    
+    articulos = []
+    if len(request.GET)>=1:
+        search = request.GET['search']
+        articulos = Articulos.objects.filter(nombre__icontains=search) | Articulos.objects.filter(seccion__icontains=search)
+    else:
+        articulos = Articulos.objects.all()
+    secciones = set()
+    for art in articulos.values():
+        secciones.add(art['seccion'])
+    print(secciones)
+    diccionario = {
+        'articulos':articulos.values(),
+        'secciones':secciones
+    }
     return render(request,'articulos/articulos.html',diccionario)
 
-def addarticulo(request):    
+def addarticulo(request):
     art = Articulos.objects.create(nombre=request.GET['nombre'],seccion=request.GET['seccion'],precio=request.GET['precio'])
     return HttpResponseRedirect('/articulos')
 
-def searcharticulo(request):
-    nombre = request.GET['snombre']
-    articulos = Articulos.objects.get(nombre=nombre)
-    return HttpResponseRedirect('/articulos',articulos)
+# Aprendizaje Django
 
 def saludar(request):
     fechaActual = datetime.datetime.now()

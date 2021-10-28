@@ -14,6 +14,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_SQLITE = "C:/Users/MakeDream/Dropbox/Docs/sqlite/"
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -55,8 +56,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # 'DIRS': [f'{BASE_DIR}/templates/'],
-        # 'DIRS': [r'C:\Users\MakeDream\Desktop\Ruta1\Mintic-G48\django\templates'],
-        'DIRS': [r'C:\Users\Juan\Desktop\ruta1\Mintic-G48\django\templates'],
+        'DIRS': [r'C:\Users\MakeDream\Desktop\Ruta1\Mintic-G48\django\templates'],
+        # 'DIRS': [r'C:\Users\Juan\Desktop\ruta1\Mintic-G48\django\templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,14 +77,20 @@ WSGI_APPLICATION = 'django48.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    #     'NAME': 'pglocal',
+    #     'USER':'postgres',
+    #     'PASSWORD':'1013627198',
+    #     'HOST':'127.0.0.1',
+    #     'DATABASE_PORT':'5432',
+    # },
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pglocal',
-        'USER':'postgres',
-        'PASSWORD':'1013627198',
-        'HOST':'127.0.0.1',
-        'DATABASE_PORT':'5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_SQLITE + 'G48.sqlite3',
     }
+    # C:\Users\MakeDream\Dropbox\Docs\sqlite\G29.sqlite3
+    # C:\Users\MakeDream\Dropbox\Docs\sqlite\G61.sqlite3
 }
 
 
@@ -126,8 +133,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    r'C:\Users\Juan\Desktop\ruta1\Mintic-G48\django\statics',
-    # r'C:\Users\MakeDream\Desktop\Ruta1\Mintic-G48\django\statics',
+    # r'C:\Users\Juan\Desktop\ruta1\Mintic-G48\django\statics',
+    r'C:\Users\MakeDream\Desktop\Ruta1\Mintic-G48\django\statics',
 ]
 
 # Default primary key field type

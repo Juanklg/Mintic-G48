@@ -1,13 +1,37 @@
-https://docs.djangoproject.com/en/3.2/ref/models/fields/#unique
-
-https://docs.djangoproject.com/en/3.2/ref/models/querysets/#field-lookups
-
-http://127.0.0.1:8000/articulos/
-
-https://www.w3schools.com/html/html_layout.asp
+django fields database - https://docs.djangoproject.com/en/3.2/ref/models/fields/#unique
+django fields filters - https://docs.djangoproject.com/en/3.2/ref/models/querysets/#field-lookups
+django layout - https://www.w3schools.com/html/html_layout.asp
 
 
 Activar ambiente virtual
 . proydjango/Scripts/activate
 
 python django48/manage.py runserver
+
+- crear mini app
+python manage.py startapp gestor
+
+- crear los modelos en el archivo models.py
+- en settings, agregamos en INSTALLED_APPS 'gestor'
+
+-Crear migraciones
+python manage.py makemigrations
+
+Crear scripts de creacion de tablas segun el app y el archivo gerenado de migraciones
+-python manage.py sqlmigrate gestor 0001
+
+correr script de completar la migracion
+-python manage.py migrate
+
+db por consola 
+-python manage.py shell
+
+insetar registro
+from gestor.models import articulo
+Art1=articulo.objects.create(nombre='silla', seccion='hogar', precio=200)
+Art1.precio=500
+Art1.save()
+Art3.objects.get(id=1)
+Art3.delete()
+
+
