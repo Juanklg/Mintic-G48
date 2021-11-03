@@ -2,30 +2,9 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.template import loader
 from django.shortcuts import render
 
-from gestor.models import Articulos
+
 
 import datetime
-
-def articulos(request):    
-    articulos = []
-    if len(request.GET)>=1:
-        search = request.GET['search']
-        articulos = Articulos.objects.filter(nombre__icontains=search) | Articulos.objects.filter(seccion__icontains=search)
-    else:
-        articulos = Articulos.objects.all()
-    secciones = set()
-    for art in articulos.values():
-        secciones.add(art['seccion'])
-    print(secciones)
-    diccionario = {
-        'articulos':articulos.values(),
-        'secciones':secciones
-    }
-    return render(request,'articulos/articulos.html',diccionario)
-
-def addarticulo(request):
-    art = Articulos.objects.create(nombre=request.GET['nombre'],seccion=request.GET['seccion'],precio=request.GET['precio'])
-    return HttpResponseRedirect('/articulos')
 
 # Aprendizaje Django
 

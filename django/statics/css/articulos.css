@@ -1,0 +1,17 @@
+.card{
+    width: 18rem;
+}
+.card-title,.card-subtitle{
+    text-transform: capitalize;
+}
+
+.readArticulo{
+    /* overflow-y: scroll; */
+    /* height: 600px; */
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;    
+    gap: 10px;
+}

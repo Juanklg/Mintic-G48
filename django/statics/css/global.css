@@ -1,21 +1,21 @@
-body{
+/* body{
     background: #1ECE16;
     background: -moz-linear-gradient(-45deg, #1ECE16 0%, #0BA489 26%, #15C559 100%);
     background: -webkit-linear-gradient(-45deg, #1ECE16 0%, #0BA489 26%, #15C559 100%);
     background: linear-gradient(135deg, #1ECE16 0%, #0BA489 26%, #15C559 100%);
-}
+} */
 /* ------------------------------------------------------- */
-section .container{
+/* section .container{
     background-color: #f1f1f1;
     padding: 10px;
-}
+} */
 
-section nav{
+/* section nav{
     text-align: center;
     background: rgb(0, 128, 0,0.5);
     padding: 10px;
     
-}
+} */
 /* .navegacion a{
     background-color: tomato;
     color: white;
