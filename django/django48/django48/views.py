@@ -1,9 +1,5 @@
 from django.http import HttpResponse,HttpResponseRedirect
 from django.template import loader
-from django.shortcuts import render
-
-
-
 import datetime
 
 # Aprendizaje Django
@@ -15,14 +11,19 @@ def saludar(request):
     return HttpResponse(docu)
     
 def fonts(request):
-    plt = loader.get_template('learncss/fonts.html')
+    plt = loader.get_template('docus/learncss/fonts.html')
     docu = plt.render()
     return HttpResponse(docu)
 
 def tareas(request):
     taskList = ['Implementar db sqlite3','integrar vistas de flask']
-    plt = loader.get_template('learndjango/tareas.html')
+    plt = loader.get_template('docus/learndjango/tareas.html')
     docu = plt.render({"listado":taskList})
+    return HttpResponse(docu)
+
+def videos(request):
+    plt = loader.get_template('docus/learndjango/videos.html')
+    docu = plt.render()
     return HttpResponse(docu)
 
 def calculo(request,fechaNacimiento,fechaFutura):
@@ -36,7 +37,7 @@ def calculo(request,fechaNacimiento,fechaFutura):
         "edad":edadActual,
         "edadFutura":edadFutura,
     }
-    plt = loader.get_template('learndjango/calculos.html')
+    plt = loader.get_template('docus/learndjango/calculos.html')
     docu = plt.render(dataCalculo)
     return HttpResponse(docu)
 

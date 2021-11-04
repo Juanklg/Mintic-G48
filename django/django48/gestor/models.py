@@ -1,12 +1,12 @@
 from django.db import models
 from django.db.models.base import Model
 
-
 class Clientes(models.Model):
-    email=models.EmailField(max_length=50,unique=True)
-    nombre=models.CharField(max_length=30)
-    direccion=models.CharField(max_length=50)
-    tfno=models.CharField(max_length=13)
+    nombre=models.CharField(max_length=30,blank=False,default="nulo")
+    direccion=models.CharField(max_length=50,blank=False,default="nulo")
+    email=models.EmailField(max_length=50,unique=True,blank=False,default="nulo")    
+    telefono=models.CharField(max_length=15,blank=False,default="nulo")
+    password=models.CharField(max_length=15,blank=False,default="nulo")
     def __str__(self):
         return f"Nombre_del_Cliente: {self.nombre} - Email_del_cliente: {self.email}"
 

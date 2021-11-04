@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% block head %}
+<title>***{{model|upper}}***</title>
+<link rel="stylesheet" href="/static/css/clientes.css">
+{% endblock %}
+
+{% block main %}
+<section class="clientesAdd">
+    <form action="/gestor/usuarios/" method="post">{% csrf_token %}
+        {{formulario.as_p}}
+        <input type="reset" value="Borrar">
+        <input type="submit" value="Enviar">
+    </form>
+</section>
+{% endblock %}
+
+
+
+
+    

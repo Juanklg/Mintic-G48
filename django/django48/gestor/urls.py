@@ -4,6 +4,15 @@ from gestor.views import *
 
 urlpatterns = [
     # Articulos
-    path('', articulos),
-    path('add/', addarticulo),
+    path('articulos/', articulos),
+    path('articuloAdd/', articuloAdd),
+    # Clientes
+    path('clientes/', clientes),
+    path('clienteAdd/', clientesAdd),
+    # Users
+    path('usuarios/', userAdd),
+    path('usuariosAdd/', clientesAdd),
 ]
+
+
+
