@@ -7,9 +7,9 @@
 {% endblock %}
 
 {% block main %}
-<section class="addArticulo">
+<section class="addArticulo/">
 	<h2>Formularios par articulos</h2>
-	<form action="/art/addarticulo/" method="post">{% csrf_token %}
+	<form action="/gestor/articuloAdd/" method="post">{% csrf_token %}
 		<label>Ingrese el nombre del articulo:
 			<input type="text" name="nombre"></label><br>
 		
@@ -36,8 +36,8 @@
 		  <h5 class="card-title">{{art.nombre}}</h5>
 		  <h6 class="card-subtitle mb-2 text-muted">{{art.seccion}}</h6>
 		  <p class="card-text">$ {{art.precio}}</p>
-		  <a href="/articulos/edit/{{art.nombre}}" class="card-link"><img src="/static/img/edit.svg." alt="edit"></a>
-		  <a href="/articulos/delete/{{art.nombre}}" class="card-link"><img src="/static/img/delete.svg." alt="delete"></a>
+		  <a href="/gestor/articuloEdit/{{art.nombre}}" class="card-link"><img src="/static/img/edit.svg." alt="edit"></a>
+		  <a href="/gestor/articuloDelete/{{art.nombre}}" class="card-link"><img src="/static/img/delete.svg." alt="delete"></a>
 		</div>
 	</div>
 	{%endfor%}
