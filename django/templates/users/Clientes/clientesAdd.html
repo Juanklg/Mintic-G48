@@ -1,13 +1,5 @@
-{% extends "index.html" %}
-
-{% block head %}
-<title>***{{model|upper}}***</title>
-<link rel="stylesheet" href="/static/css/clientes.css">
-{% endblock %}
-
-{% block main %}
 <section class="clientesAdd">
-    <form class="row g-3 needs-validation" action="/gestor/clienteAdd/" method="post">{% csrf_token %}
+    <form class="row g-3 needs-validation" action="/gestor/clienteAdd/" method="post" autocomplete="off">{% csrf_token %}
 
         <div class="col-md-4">
             <label for="validationCustom01" class="form-label">Nombre</label>
@@ -31,7 +23,7 @@
             <label for="validationCustomUsername" class="form-label is-valid">Correo</label>
             <div class="input-group has-validation">
                 <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="email" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required name="email" value="{{cliente.email}}"
+                <input type="email" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required name="email" value="{{cliente.email}}"                
                 {% if 'eemail' in status %} class="form-control is-invalid" {% else%}class="form-control" {% endif %}>
                 <div class="invalid-feedback">
                     {{status.eemail}}
@@ -73,4 +65,3 @@
         </div>
     </form>
 </section>
-{% endblock %}

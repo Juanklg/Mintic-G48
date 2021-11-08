@@ -2,6 +2,12 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.template import loader
 import datetime
 
+# login
+def userLogin(req):
+    pass
+def userLogout(req):
+    pass
+
 # Aprendizaje Django
 
 def saludar(request):

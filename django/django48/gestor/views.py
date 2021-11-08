@@ -8,7 +8,7 @@ import pdb
 # gestor
 from gestor.models import Articulos,Clientes
 
-from django.contrib.auth.forms import UserCreationForm
+from gestor.forms import UserRegisterForm
 
 def articulos(request):    
     articulos = []
@@ -77,11 +77,11 @@ def clientes(request):
     diccionario = {
         'fecha':fechaActual,
         'model':'clientes',
-        # 'theme':'Quartz',
+        'theme':'Quartz',
         # 'theme':'Sketchy',
         'clientes':clientes.values()
     }
-    return render(request,'users/clientes.html',diccionario)
+    return render(request,'Users/Clientes/clientes.html',diccionario)
 
 def clientesAdd(req):
     nombre=req.POST['nombre']
@@ -98,7 +98,7 @@ def clientesAdd(req):
     # pdb.set_trace()
     if len(status)>0:
         messages.error(req, 'Error en formularios de registro')
-        return render(req,'users/clientes.html',diccionario)
+        return render(req,'Users/Clientes/clientes.html',diccionario)
     else:
         cliente = Clientes.objects.create(nombre=nombre,direccion=direccion,email=email,telefono=telefono,password=password)
         messages.success(req, f'Cliente {nombre} registrado con exito')
@@ -109,20 +109,21 @@ def clientesAdd(req):
 
 def userAdd(req):
     if req.method == 'POST':
-        form=UserCreationForm(req.POST)
-        # form=UserRegisterForm(req.POST)
+        # form=UserCreationForm(req.POST)
+        form=UserRegisterForm(req.POST)
         if form.is_valid():
             username=form.cleaned_data['username']
             form.save()
             messages.success(req,f'El usuario {username} fue creado con exito ')
     else:
         messages.success(req,f'Probando los mensajes')
-        # form=UserRegisterForm()
-        form=UserCreationForm()
+        form=UserRegisterForm()
+        # form=UserCreationForm()
     
     diccionario = {
         'fecha':datetime.datetime.now(),
         'model':'usuarios',
+        'header':'Usuarios',
         'formulario':form
     }
     return render(req,'users/users.html',diccionario)

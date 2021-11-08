@@ -7,11 +7,10 @@ urlpatterns = [
     path('articulos/', articulos),
     path('articuloAdd/', articuloAdd),
     # Clientes
-    path('clientes/', clientes),
-    path('clienteAdd/', clientesAdd),
+    path('clientes/', clientes),#peticion get clientes
+    path('clienteAdd/', clientesAdd),#peticion post clientes
     # Users
-    path('usuarios/', userAdd),
-    path('usuariosAdd/', clientesAdd),
+    path('usuarioAdd/', userAdd),#peticion mixta de usuarios
 ]
 
 

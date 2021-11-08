@@ -1,0 +1,16 @@
+{% extends "login.html" %}
+
+{% block head %}
+<!-- <link rel="stylesheet" href="/static/css/clientes.css"> -->
+{% endblock %}
+
+{% block main %}
+<section>
+    <form class="row g-3 needs-validation" action="/gestor/usuarioLogin/" method="post">{% csrf_token %}
+        {{form.as_p}}
+        <div class="col-12">
+            <button class="btn btn-primary" type="submit">Ingresar</button>
+        </div>
+    </form>
+</section>
+{% endblock %}

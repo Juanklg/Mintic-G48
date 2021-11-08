@@ -1,0 +1,16 @@
+{% extends "index.html" %}
+
+{% block head %}
+<title>***{{model|upper}}***</title>
+<link rel="stylesheet" href="/static/css/clientes.css">
+{% endblock %}
+
+{% block main %}
+{% include 'users/Clientes/clientesAdd.html' %}
+<section>
+    <h2>Cliente</h2>
+</section>
+<section>
+    <h2>Clientes</h2>
+</section>
+{% endblock %}

@@ -1,8 +1,6 @@
 
 <header>
-    <nav class="headerNav">
-        
-    </nav>
+    
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">WorkBook</a>
@@ -22,7 +20,7 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
                             <li><a class="dropdown-item" href="/gestor/articulos">Articulos</a></li>
-                            <li><a class="dropdown-item" href="/gestor/usuarios">Usuarios</a></li>
+                            <li><a class="dropdown-item" href="/gestor/usuarioAdd">Usuarios</a></li>
                             <li><a class="dropdown-item" href="/gestor/clientes">Clientes</a></li>
                             <li><hr class="dropdown-divider"></li>
                         </ul>
@@ -45,55 +43,64 @@
                         <a class="nav-link disabled">Link</a>
                     </li> -->
                 </ul>
+                {% if model %}
                 <form class="d-flex" action="/gestor/{{model}}">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name='search'>
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
+                {% endif %}
             </div>
         </div>
     </nav>
 </header>
-<style>
-    header {
-        background: rgb(0, 128, 0, 0.5);
-        color: white;
-    }
-
-    .headerNav {
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    header h1 {
-        text-transform: capitalize;
-        font-variant: small-caps;
-        font-size: 4em;
-        /* text-shadow: 4px 6px 3px MidnightBlue; */
-        color: #FFFFFF;
-        text-shadow:
-            #FFF 0px 0px 5px,
-            #FFF 0px 0px 10px,
-            #FFF 0px 0px 15px,
-            #FF2D95 0px 0px 20px,
-            #FF2D95 0px 0px 30px,
-            #FF2D95 0px 0px 40px,
-            #FF2D95 0px 0px 50px,
-            #FF2D95 0px 0px 75px;
-    }
-
-    .headerNav a {
-        color: white;
-        padding: 10px 20px;
-        margin: 5px;
-        /* border-radius: 10px; */
-        /* background-color: tomato; */
-    }
-
-    .headerNav a:hover {
-        background-color: rgba(255, 99, 71, 0.657);
-        color: white;
-        padding: 10px 20px;
-        margin: 5px;
-        border-radius: 10px;
-    }
-</style>
+<!-- <header>
+    <nav class="headerNav">
+        
+    </nav>
+    
+    
+    <style>
+        header {
+            background: rgb(0, 128, 0, 0.5);
+            color: white;
+        }
+    
+        .headerNav {
+            display: flex;
+            justify-content: flex-end;
+        }
+    
+        header h1 {
+            text-transform: capitalize;
+            font-variant: small-caps;
+            font-size: 4em;
+            /* text-shadow: 4px 6px 3px MidnightBlue; */
+            color: #FFFFFF;
+            text-shadow:
+                #FFF 0px 0px 5px,
+                #FFF 0px 0px 10px,
+                #FFF 0px 0px 15px,
+                #FF2D95 0px 0px 20px,
+                #FF2D95 0px 0px 30px,
+                #FF2D95 0px 0px 40px,
+                #FF2D95 0px 0px 50px,
+                #FF2D95 0px 0px 75px;
+        }
+    
+        .headerNav a {
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            /* border-radius: 10px; */
+            /* background-color: tomato; */
+        }
+    
+        .headerNav a:hover {
+            background-color: rgba(255, 99, 71, 0.657);
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 10px;
+        }
+    </style>
+</header> -->

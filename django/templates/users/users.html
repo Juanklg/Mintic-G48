@@ -7,7 +7,7 @@
 
 {% block main %}
 <section class="clientesAdd">
-    <form action="/gestor/usuarios/" method="post">{% csrf_token %}
+    <form action="/gestor/usuarioAdd/" method="post">{% csrf_token %}
         {{formulario.as_p}}
         <input type="reset" value="Borrar">
         <input type="submit" value="Enviar">
@@ -15,7 +15,3 @@
 </section>
 {% endblock %}
 
-
-
-
-    
