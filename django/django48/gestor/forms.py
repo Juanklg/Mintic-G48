@@ -10,7 +10,18 @@ from django.contrib.auth.models import User
 # Creamos nuestro formulario que hereda el de django
 class UserRegisterForm(UserCreationForm):
     username=forms.CharField(label='Nombre de usuario')
-    email=forms.CharField(label='Correo',widget=forms.EmailInput) 
+    email=forms.CharField(label='Correo',widget=forms.EmailInput)
+    telefono = forms.CharField(
+        label='Telefono',
+        max_length=254,
+        widget=forms.TextInput(attrs={'class': "form-control form-control-sm"}),
+    )
+    direccion = forms.CharField(
+        label='direccion',
+        max_length=254,
+        widget=forms.TextInput(attrs={'class': "form-control form-control-sm"}),
+    )
+    # telefono=forms.CharField(label='Telefono',widget=forms.CharField) 
     password1=forms.CharField(label='Contraseña',widget=forms.PasswordInput)
     password2=forms.CharField(label='Confirme contraseña',widget=forms.PasswordInput)
     class Meta:

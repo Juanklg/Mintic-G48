@@ -76,18 +76,18 @@ WSGI_APPLICATION = 'django48.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 BASE_SQLITE = "C:/Users/MakeDream/Dropbox/Docs/sqlite/"
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #     'NAME': 'pglocal',
-    #     'USER':'postgres',
-    #     'PASSWORD':'1013627198',
-    #     'HOST':'127.0.0.1',
-    #     'DATABASE_PORT':'5432',
-    # },
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_SQLITE + 'G48.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER':'postgres',
+        'PASSWORD':'secure_pass_here',
+        'HOST':'127.0.0.1',
+        'DATABASE_PORT':'5432',
+    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_SQLITE + 'G48.sqlite3',
+    # }
     # C:\Users\MakeDream\Dropbox\Docs\sqlite\G29.sqlite3
     # C:\Users\MakeDream\Dropbox\Docs\sqlite\G61.sqlite3
 }

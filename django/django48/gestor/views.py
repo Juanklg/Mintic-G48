@@ -9,6 +9,7 @@ import pdb
 from gestor.models import Articulos,Clientes
 
 from gestor.forms import UserRegisterForm
+from django.contrib.auth.models import User
 
 def articulos(request):    
     articulos = []
@@ -114,6 +115,10 @@ def userAdd(req):
         if form.is_valid():
             username=form.cleaned_data['username']
             form.save()
+            data=form.cleaned_data
+            user = User.objects.get(username=data['username'])
+            cliente = Clientes.objects.create(user=user,direccion=data['direccion'],telefono=data['telefono'])
+            # messages.success(req, f'Cliente {nombre} registrado con exito')
             messages.success(req,f'El usuario {username} fue creado con exito ')
     else:
         messages.success(req,f'Probando los mensajes')
